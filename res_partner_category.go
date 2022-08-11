@@ -6,21 +6,21 @@ import (
 
 // ResPartnerCategory represents res.partner.category model.
 type ResPartnerCategory struct {
-	LastUpdate  *Time     `xmlrpc:"__last_update,omptempty"`
-	Active      *Bool     `xmlrpc:"active,omptempty"`
-	ChildIds    *Relation `xmlrpc:"child_ids,omptempty"`
-	Color       *Int      `xmlrpc:"color,omptempty"`
-	CreateDate  *Time     `xmlrpc:"create_date,omptempty"`
-	CreateUid   *Many2One `xmlrpc:"create_uid,omptempty"`
-	DisplayName *String   `xmlrpc:"display_name,omptempty"`
-	Id          *Int      `xmlrpc:"id,omptempty"`
-	Name        *String   `xmlrpc:"name,omptempty"`
-	ParentId    *Many2One `xmlrpc:"parent_id,omptempty"`
-	ParentLeft  *Int      `xmlrpc:"parent_left,omptempty"`
-	ParentRight *Int      `xmlrpc:"parent_right,omptempty"`
-	PartnerIds  *Relation `xmlrpc:"partner_ids,omptempty"`
-	WriteDate   *Time     `xmlrpc:"write_date,omptempty"`
-	WriteUid    *Many2One `xmlrpc:"write_uid,omptempty"`
+	LastUpdate   *Time     `xmlrpc:"__last_update,omptempty"`
+	Active       *Bool     `xmlrpc:"active,omptempty"`
+	ChildIds     *Relation `xmlrpc:"child_ids,omptempty"`
+	Color        *Int      `xmlrpc:"color,omptempty"`
+	CompleteName *String   `xmlrpc:"complete_name,omptempty"`
+	CreateDate   *Time     `xmlrpc:"create_date,omptempty"`
+	CreateUid    *Many2One `xmlrpc:"create_uid,omptempty"`
+	DisplayName  *String   `xmlrpc:"display_name,omptempty"`
+	Id           *Int      `xmlrpc:"id,omptempty"`
+	Name         *String   `xmlrpc:"name,omptempty"`
+	ParentId     *Many2One `xmlrpc:"parent_id,omptempty"`
+	ParentPath   *String   `xmlrpc:"parent_path,omptempty"`
+	PartnerIds   *Relation `xmlrpc:"partner_ids,omptempty"`
+	WriteDate    *Time     `xmlrpc:"write_date,omptempty"`
+	WriteUid     *Many2One `xmlrpc:"write_uid,omptempty"`
 }
 
 // ResPartnerCategorys represents array of res.partner.category model.

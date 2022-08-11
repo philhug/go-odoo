@@ -16,6 +16,7 @@ type AccountAccount struct {
 	DisplayName            *String    `xmlrpc:"display_name,omptempty"`
 	GroupId                *Many2One  `xmlrpc:"group_id,omptempty"`
 	Id                     *Int       `xmlrpc:"id,omptempty"`
+	InternalGroup          *Selection `xmlrpc:"internal_group,omptempty"`
 	InternalType           *Selection `xmlrpc:"internal_type,omptempty"`
 	LastTimeEntriesChecked *Time      `xmlrpc:"last_time_entries_checked,omptempty"`
 	Name                   *String    `xmlrpc:"name,omptempty"`

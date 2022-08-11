@@ -31,23 +31,30 @@ type CrmLead struct {
 	DateOpen                 *Time      `xmlrpc:"date_open,omptempty"`
 	DayClose                 *Float     `xmlrpc:"day_close,omptempty"`
 	DayOpen                  *Float     `xmlrpc:"day_open,omptempty"`
+	DaysExceedingClosing     *Float     `xmlrpc:"days_exceeding_closing,omptempty"`
+	DaysToConvert            *Float     `xmlrpc:"days_to_convert,omptempty"`
 	Description              *String    `xmlrpc:"description,omptempty"`
 	DisplayName              *String    `xmlrpc:"display_name,omptempty"`
 	EmailCc                  *String    `xmlrpc:"email_cc,omptempty"`
 	EmailFrom                *String    `xmlrpc:"email_from,omptempty"`
+	ExpectedRevenue          *Float     `xmlrpc:"expected_revenue,omptempty"`
 	Function                 *String    `xmlrpc:"function,omptempty"`
 	Id                       *Int       `xmlrpc:"id,omptempty"`
+	IsBlacklisted            *Bool      `xmlrpc:"is_blacklisted,omptempty"`
 	KanbanState              *Selection `xmlrpc:"kanban_state,omptempty"`
+	LastActivityId           *Many2One  `xmlrpc:"last_activity_id,omptempty"`
 	LostReason               *Many2One  `xmlrpc:"lost_reason,omptempty"`
-	MachineLeadName          *String    `xmlrpc:"machine_lead_name,omptempty"`
 	MediumId                 *Many2One  `xmlrpc:"medium_id,omptempty"`
 	MeetingCount             *Int       `xmlrpc:"meeting_count,omptempty"`
+	MessageAttachmentCount   *Int       `xmlrpc:"message_attachment_count,omptempty"`
 	MessageBounce            *Int       `xmlrpc:"message_bounce,omptempty"`
 	MessageChannelIds        *Relation  `xmlrpc:"message_channel_ids,omptempty"`
 	MessageFollowerIds       *Relation  `xmlrpc:"message_follower_ids,omptempty"`
+	MessageHasError          *Bool      `xmlrpc:"message_has_error,omptempty"`
+	MessageHasErrorCounter   *Int       `xmlrpc:"message_has_error_counter,omptempty"`
 	MessageIds               *Relation  `xmlrpc:"message_ids,omptempty"`
 	MessageIsFollower        *Bool      `xmlrpc:"message_is_follower,omptempty"`
-	MessageLastPost          *Time      `xmlrpc:"message_last_post,omptempty"`
+	MessageMainAttachmentId  *Many2One  `xmlrpc:"message_main_attachment_id,omptempty"`
 	MessageNeedaction        *Bool      `xmlrpc:"message_needaction,omptempty"`
 	MessageNeedactionCounter *Int       `xmlrpc:"message_needaction_counter,omptempty"`
 	MessagePartnerIds        *Relation  `xmlrpc:"message_partner_ids,omptempty"`
@@ -55,11 +62,17 @@ type CrmLead struct {
 	MessageUnreadCounter     *Int       `xmlrpc:"message_unread_counter,omptempty"`
 	Mobile                   *String    `xmlrpc:"mobile,omptempty"`
 	Name                     *String    `xmlrpc:"name,omptempty"`
-	OptOut                   *Bool      `xmlrpc:"opt_out,omptempty"`
+	NextActivity1            *String    `xmlrpc:"next_activity_1,omptempty"`
+	NextActivity2            *String    `xmlrpc:"next_activity_2,omptempty"`
+	NextActivity3            *String    `xmlrpc:"next_activity_3,omptempty"`
+	NextActivityId           *Many2One  `xmlrpc:"next_activity_id,omptempty"`
 	OrderIds                 *Relation  `xmlrpc:"order_ids,omptempty"`
 	PartnerAddressEmail      *String    `xmlrpc:"partner_address_email,omptempty"`
+	PartnerAddressMobile     *String    `xmlrpc:"partner_address_mobile,omptempty"`
 	PartnerAddressName       *String    `xmlrpc:"partner_address_name,omptempty"`
+	PartnerAddressPhone      *String    `xmlrpc:"partner_address_phone,omptempty"`
 	PartnerId                *Many2One  `xmlrpc:"partner_id,omptempty"`
+	PartnerIsBlacklisted     *Bool      `xmlrpc:"partner_is_blacklisted,omptempty"`
 	PartnerName              *String    `xmlrpc:"partner_name,omptempty"`
 	Phone                    *String    `xmlrpc:"phone,omptempty"`
 	PlannedRevenue           *Float     `xmlrpc:"planned_revenue,omptempty"`
@@ -76,12 +89,14 @@ type CrmLead struct {
 	TagIds                   *Relation  `xmlrpc:"tag_ids,omptempty"`
 	TeamId                   *Many2One  `xmlrpc:"team_id,omptempty"`
 	Title                    *Many2One  `xmlrpc:"title,omptempty"`
+	TitleAction              *String    `xmlrpc:"title_action,omptempty"`
 	Type                     *Selection `xmlrpc:"type,omptempty"`
 	UserEmail                *String    `xmlrpc:"user_email,omptempty"`
 	UserId                   *Many2One  `xmlrpc:"user_id,omptempty"`
 	UserLogin                *String    `xmlrpc:"user_login,omptempty"`
 	Website                  *String    `xmlrpc:"website,omptempty"`
 	WebsiteMessageIds        *Relation  `xmlrpc:"website_message_ids,omptempty"`
+	WonStatus                *Selection `xmlrpc:"won_status,omptempty"`
 	WriteDate                *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid                 *Many2One  `xmlrpc:"write_uid,omptempty"`
 	Zip                      *String    `xmlrpc:"zip,omptempty"`

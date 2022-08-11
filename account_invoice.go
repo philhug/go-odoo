@@ -8,6 +8,8 @@ import (
 type AccountInvoice struct {
 	LastUpdate                     *Time      `xmlrpc:"__last_update,omptempty"`
 	AccessToken                    *String    `xmlrpc:"access_token,omptempty"`
+	AccessUrl                      *String    `xmlrpc:"access_url,omptempty"`
+	AccessWarning                  *String    `xmlrpc:"access_warning,omptempty"`
 	AccountId                      *Many2One  `xmlrpc:"account_id,omptempty"`
 	ActivityDateDeadline           *Time      `xmlrpc:"activity_date_deadline,omptempty"`
 	ActivityIds                    *Relation  `xmlrpc:"activity_ids,omptempty"`
@@ -15,12 +17,18 @@ type AccountInvoice struct {
 	ActivitySummary                *String    `xmlrpc:"activity_summary,omptempty"`
 	ActivityTypeId                 *Many2One  `xmlrpc:"activity_type_id,omptempty"`
 	ActivityUserId                 *Many2One  `xmlrpc:"activity_user_id,omptempty"`
+	AmountByGroup                  *String    `xmlrpc:"amount_by_group,omptempty"`
 	AmountTax                      *Float     `xmlrpc:"amount_tax,omptempty"`
+	AmountTaxSigned                *Float     `xmlrpc:"amount_tax_signed,omptempty"`
 	AmountTotal                    *Float     `xmlrpc:"amount_total,omptempty"`
 	AmountTotalCompanySigned       *Float     `xmlrpc:"amount_total_company_signed,omptempty"`
 	AmountTotalSigned              *Float     `xmlrpc:"amount_total_signed,omptempty"`
 	AmountUntaxed                  *Float     `xmlrpc:"amount_untaxed,omptempty"`
+	AmountUntaxedInvoiceSigned     *Float     `xmlrpc:"amount_untaxed_invoice_signed,omptempty"`
 	AmountUntaxedSigned            *Float     `xmlrpc:"amount_untaxed_signed,omptempty"`
+	AuthorizedTransactionIds       *Relation  `xmlrpc:"authorized_transaction_ids,omptempty"`
+	BankAccountRequired            *Bool      `xmlrpc:"bank_account_required,omptempty"`
+	BvrReference                   *String    `xmlrpc:"bvr_reference,omptempty"`
 	CampaignId                     *Many2One  `xmlrpc:"campaign_id,omptempty"`
 	CashRoundingId                 *Many2One  `xmlrpc:"cash_rounding_id,omptempty"`
 	Comment                        *String    `xmlrpc:"comment,omptempty"`
@@ -34,22 +42,40 @@ type AccountInvoice struct {
 	DateDue                        *Time      `xmlrpc:"date_due,omptempty"`
 	DateInvoice                    *Time      `xmlrpc:"date_invoice,omptempty"`
 	DisplayName                    *String    `xmlrpc:"display_name,omptempty"`
+	ExtractCanShowResendButton     *Bool      `xmlrpc:"extract_can_show_resend_button,omptempty"`
+	ExtractCanShowSendButton       *Bool      `xmlrpc:"extract_can_show_send_button,omptempty"`
+	ExtractRemoteid                *Int       `xmlrpc:"extract_remoteid,omptempty"`
+	ExtractState                   *Selection `xmlrpc:"extract_state,omptempty"`
+	ExtractWordIds                 *Relation  `xmlrpc:"extract_word_ids,omptempty"`
 	FiscalPositionId               *Many2One  `xmlrpc:"fiscal_position_id,omptempty"`
 	HasOutstanding                 *Bool      `xmlrpc:"has_outstanding,omptempty"`
 	Id                             *Int       `xmlrpc:"id,omptempty"`
-	InNote                         *String    `xmlrpc:"in_note,omptempty"`
+	IncotermId                     *Many2One  `xmlrpc:"incoterm_id,omptempty"`
 	IncotermsId                    *Many2One  `xmlrpc:"incoterms_id,omptempty"`
+	InvoiceIcon                    *String    `xmlrpc:"invoice_icon,omptempty"`
 	InvoiceLineIds                 *Relation  `xmlrpc:"invoice_line_ids,omptempty"`
+	InvoiceZero                    *Bool      `xmlrpc:"invoice_zero,omptempty"`
+	IsrReference                   *String    `xmlrpc:"isr_reference,omptempty"`
 	JournalId                      *Many2One  `xmlrpc:"journal_id,omptempty"`
-	MachineInvoice                 *Bool      `xmlrpc:"machine_invoice,omptempty"`
-	MachineInvoiceTitle            *String    `xmlrpc:"machine_invoice_title,omptempty"`
-	MachinePurchaseOrder           *String    `xmlrpc:"machine_purchase_order,omptempty"`
+	L10NChCurrencyName             *String    `xmlrpc:"l10n_ch_currency_name,omptempty"`
+	L10NChIsrNumber                *String    `xmlrpc:"l10n_ch_isr_number,omptempty"`
+	L10NChIsrNumberSpaced          *String    `xmlrpc:"l10n_ch_isr_number_spaced,omptempty"`
+	L10NChIsrOpticalLine           *String    `xmlrpc:"l10n_ch_isr_optical_line,omptempty"`
+	L10NChIsrPostal                *String    `xmlrpc:"l10n_ch_isr_postal,omptempty"`
+	L10NChIsrPostalFormatted       *String    `xmlrpc:"l10n_ch_isr_postal_formatted,omptempty"`
+	L10NChIsrSent                  *Bool      `xmlrpc:"l10n_ch_isr_sent,omptempty"`
+	L10NChIsrSubscription          *String    `xmlrpc:"l10n_ch_isr_subscription,omptempty"`
+	L10NChIsrSubscriptionFormatted *String    `xmlrpc:"l10n_ch_isr_subscription_formatted,omptempty"`
+	L10NChIsrValid                 *Bool      `xmlrpc:"l10n_ch_isr_valid,omptempty"`
 	MediumId                       *Many2One  `xmlrpc:"medium_id,omptempty"`
+	MessageAttachmentCount         *Int       `xmlrpc:"message_attachment_count,omptempty"`
 	MessageChannelIds              *Relation  `xmlrpc:"message_channel_ids,omptempty"`
 	MessageFollowerIds             *Relation  `xmlrpc:"message_follower_ids,omptempty"`
+	MessageHasError                *Bool      `xmlrpc:"message_has_error,omptempty"`
+	MessageHasErrorCounter         *Int       `xmlrpc:"message_has_error_counter,omptempty"`
 	MessageIds                     *Relation  `xmlrpc:"message_ids,omptempty"`
 	MessageIsFollower              *Bool      `xmlrpc:"message_is_follower,omptempty"`
-	MessageLastPost                *Time      `xmlrpc:"message_last_post,omptempty"`
+	MessageMainAttachmentId        *Many2One  `xmlrpc:"message_main_attachment_id,omptempty"`
 	MessageNeedaction              *Bool      `xmlrpc:"message_needaction,omptempty"`
 	MessageNeedactionCounter       *Int       `xmlrpc:"message_needaction_counter,omptempty"`
 	MessagePartnerIds              *Relation  `xmlrpc:"message_partner_ids,omptempty"`
@@ -60,18 +86,19 @@ type AccountInvoice struct {
 	Name                           *String    `xmlrpc:"name,omptempty"`
 	Number                         *String    `xmlrpc:"number,omptempty"`
 	Origin                         *String    `xmlrpc:"origin,omptempty"`
-	OutNote                        *String    `xmlrpc:"out_note,omptempty"`
 	OutstandingCreditsDebitsWidget *String    `xmlrpc:"outstanding_credits_debits_widget,omptempty"`
 	PartnerBankId                  *Many2One  `xmlrpc:"partner_bank_id,omptempty"`
 	PartnerId                      *Many2One  `xmlrpc:"partner_id,omptempty"`
 	PartnerShippingId              *Many2One  `xmlrpc:"partner_shipping_id,omptempty"`
 	PaymentIds                     *Relation  `xmlrpc:"payment_ids,omptempty"`
+	PaymentModeId                  *Many2One  `xmlrpc:"payment_mode_id,omptempty"`
 	PaymentMoveLineIds             *Relation  `xmlrpc:"payment_move_line_ids,omptempty"`
+	PaymentOrderOk                 *Bool      `xmlrpc:"payment_order_ok,omptempty"`
 	PaymentTermId                  *Many2One  `xmlrpc:"payment_term_id,omptempty"`
 	PaymentsWidget                 *String    `xmlrpc:"payments_widget,omptempty"`
-	PortalUrl                      *String    `xmlrpc:"portal_url,omptempty"`
+	PaypalUrl                      *String    `xmlrpc:"paypal_url,omptempty"`
+	PlaneId                        *Many2One  `xmlrpc:"plane_id,omptempty"`
 	PurchaseId                     *Many2One  `xmlrpc:"purchase_id,omptempty"`
-	QuantityTotal                  *Float     `xmlrpc:"quantity_total,omptempty"`
 	Reconciled                     *Bool      `xmlrpc:"reconciled,omptempty"`
 	Reference                      *String    `xmlrpc:"reference,omptempty"`
 	ReferenceType                  *Selection `xmlrpc:"reference_type,omptempty"`
@@ -80,17 +107,25 @@ type AccountInvoice struct {
 	Residual                       *Float     `xmlrpc:"residual,omptempty"`
 	ResidualCompanySigned          *Float     `xmlrpc:"residual_company_signed,omptempty"`
 	ResidualSigned                 *Float     `xmlrpc:"residual_signed,omptempty"`
+	SaleId                         *Many2One  `xmlrpc:"sale_id,omptempty"`
 	Sent                           *Bool      `xmlrpc:"sent,omptempty"`
 	SequenceNumberNext             *String    `xmlrpc:"sequence_number_next,omptempty"`
 	SequenceNumberNextPrefix       *String    `xmlrpc:"sequence_number_next_prefix,omptempty"`
+	SlipIds                        *Relation  `xmlrpc:"slip_ids,omptempty"`
+	SourceEmail                    *String    `xmlrpc:"source_email,omptempty"`
 	SourceId                       *Many2One  `xmlrpc:"source_id,omptempty"`
 	State                          *Selection `xmlrpc:"state,omptempty"`
 	TaxLineIds                     *Relation  `xmlrpc:"tax_line_ids,omptempty"`
 	TeamId                         *Many2One  `xmlrpc:"team_id,omptempty"`
 	TimesheetCount                 *Int       `xmlrpc:"timesheet_count,omptempty"`
 	TimesheetIds                   *Relation  `xmlrpc:"timesheet_ids,omptempty"`
+	TransactionId                  *String    `xmlrpc:"transaction_id,omptempty"`
+	TransactionIds                 *Relation  `xmlrpc:"transaction_ids,omptempty"`
 	Type                           *Selection `xmlrpc:"type,omptempty"`
 	UserId                         *Many2One  `xmlrpc:"user_id,omptempty"`
+	VendorBillId                   *Many2One  `xmlrpc:"vendor_bill_id,omptempty"`
+	VendorBillPurchaseId           *Many2One  `xmlrpc:"vendor_bill_purchase_id,omptempty"`
+	VendorDisplayName              *String    `xmlrpc:"vendor_display_name,omptempty"`
 	WebsiteMessageIds              *Relation  `xmlrpc:"website_message_ids,omptempty"`
 	WriteDate                      *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid                       *Many2One  `xmlrpc:"write_uid,omptempty"`

@@ -14,18 +14,22 @@ type ResPartner struct {
 	ActivitySummary               *String    `xmlrpc:"activity_summary,omptempty"`
 	ActivityTypeId                *Many2One  `xmlrpc:"activity_type_id,omptempty"`
 	ActivityUserId                *Many2One  `xmlrpc:"activity_user_id,omptempty"`
+	AdditionalInfo                *String    `xmlrpc:"additional_info,omptempty"`
+	AssociateMember               *Many2One  `xmlrpc:"associate_member,omptempty"`
 	BankAccountCount              *Int       `xmlrpc:"bank_account_count,omptempty"`
 	BankIds                       *Relation  `xmlrpc:"bank_ids,omptempty"`
 	Barcode                       *String    `xmlrpc:"barcode,omptempty"`
+	Birthdate                     *String    `xmlrpc:"birthdate,omptempty"`
+	BirthdateDate                 *Time      `xmlrpc:"birthdate_date,omptempty"`
 	CalendarLastNotifAck          *Time      `xmlrpc:"calendar_last_notif_ack,omptempty"`
 	CategoryId                    *Relation  `xmlrpc:"category_id,omptempty"`
 	ChannelIds                    *Relation  `xmlrpc:"channel_ids,omptempty"`
 	ChildIds                      *Relation  `xmlrpc:"child_ids,omptempty"`
 	City                          *String    `xmlrpc:"city,omptempty"`
+	CityId                        *Many2One  `xmlrpc:"city_id,omptempty"`
 	Color                         *Int       `xmlrpc:"color,omptempty"`
 	Comment                       *String    `xmlrpc:"comment,omptempty"`
 	CommercialCompanyName         *String    `xmlrpc:"commercial_company_name,omptempty"`
-	CommercialPartnerCountryId    *Many2One  `xmlrpc:"commercial_partner_country_id,omptempty"`
 	CommercialPartnerId           *Many2One  `xmlrpc:"commercial_partner_id,omptempty"`
 	CompanyId                     *Many2One  `xmlrpc:"company_id,omptempty"`
 	CompanyName                   *String    `xmlrpc:"company_name,omptempty"`
@@ -33,6 +37,7 @@ type ResPartner struct {
 	ContactAddress                *String    `xmlrpc:"contact_address,omptempty"`
 	ContractIds                   *Relation  `xmlrpc:"contract_ids,omptempty"`
 	ContractsCount                *Int       `xmlrpc:"contracts_count,omptempty"`
+	CountryEnforceCities          *Bool      `xmlrpc:"country_enforce_cities,omptempty"`
 	CountryId                     *Many2One  `xmlrpc:"country_id,omptempty"`
 	CreateDate                    *Time      `xmlrpc:"create_date,omptempty"`
 	CreateUid                     *Many2One  `xmlrpc:"create_uid,omptempty"`
@@ -40,16 +45,23 @@ type ResPartner struct {
 	CreditLimit                   *Float     `xmlrpc:"credit_limit,omptempty"`
 	CurrencyId                    *Many2One  `xmlrpc:"currency_id,omptempty"`
 	Customer                      *Bool      `xmlrpc:"customer,omptempty"`
+	CustomerPaymentModeId         *Many2One  `xmlrpc:"customer_payment_mode_id,omptempty"`
 	Date                          *Time      `xmlrpc:"date,omptempty"`
 	Debit                         *Float     `xmlrpc:"debit,omptempty"`
 	DebitLimit                    *Float     `xmlrpc:"debit_limit,omptempty"`
 	DisplayName                   *String    `xmlrpc:"display_name,omptempty"`
 	Email                         *String    `xmlrpc:"email,omptempty"`
+	Email2                        *String    `xmlrpc:"email2,omptempty"`
 	EmailFormatted                *String    `xmlrpc:"email_formatted,omptempty"`
 	Employee                      *Bool      `xmlrpc:"employee,omptempty"`
+	EventCount                    *Int       `xmlrpc:"event_count,omptempty"`
+	Firstname                     *String    `xmlrpc:"firstname,omptempty"`
+	FollowupStatus                *Selection `xmlrpc:"followup_status,omptempty"`
+	FreeMember                    *Bool      `xmlrpc:"free_member,omptempty"`
 	Function                      *String    `xmlrpc:"function,omptempty"`
 	HasUnreconciledEntries        *Bool      `xmlrpc:"has_unreconciled_entries,omptempty"`
 	Id                            *Int       `xmlrpc:"id,omptempty"`
+	IdNumbers                     *Relation  `xmlrpc:"id_numbers,omptempty"`
 	ImStatus                      *String    `xmlrpc:"im_status,omptempty"`
 	Image                         *String    `xmlrpc:"image,omptempty"`
 	ImageMedium                   *String    `xmlrpc:"image_medium,omptempty"`
@@ -58,19 +70,31 @@ type ResPartner struct {
 	InvoiceIds                    *Relation  `xmlrpc:"invoice_ids,omptempty"`
 	InvoiceWarn                   *Selection `xmlrpc:"invoice_warn,omptempty"`
 	InvoiceWarnMsg                *String    `xmlrpc:"invoice_warn_msg,omptempty"`
+	IsBlacklisted                 *Bool      `xmlrpc:"is_blacklisted,omptempty"`
 	IsCompany                     *Bool      `xmlrpc:"is_company,omptempty"`
+	IsPublished                   *Bool      `xmlrpc:"is_published,omptempty"`
+	IsSeoOptimized                *Bool      `xmlrpc:"is_seo_optimized,omptempty"`
 	JournalItemCount              *Int       `xmlrpc:"journal_item_count,omptempty"`
 	Lang                          *Selection `xmlrpc:"lang,omptempty"`
 	LastTimeEntriesChecked        *Time      `xmlrpc:"last_time_entries_checked,omptempty"`
-	MachineCompanyName            *String    `xmlrpc:"machine_company_name,omptempty"`
+	Lastname                      *String    `xmlrpc:"lastname,omptempty"`
 	MeetingCount                  *Int       `xmlrpc:"meeting_count,omptempty"`
 	MeetingIds                    *Relation  `xmlrpc:"meeting_ids,omptempty"`
+	MemberLines                   *Relation  `xmlrpc:"member_lines,omptempty"`
+	MembershipAmount              *Float     `xmlrpc:"membership_amount,omptempty"`
+	MembershipCancel              *Time      `xmlrpc:"membership_cancel,omptempty"`
+	MembershipStart               *Time      `xmlrpc:"membership_start,omptempty"`
+	MembershipState               *Selection `xmlrpc:"membership_state,omptempty"`
+	MembershipStop                *Time      `xmlrpc:"membership_stop,omptempty"`
+	MessageAttachmentCount        *Int       `xmlrpc:"message_attachment_count,omptempty"`
 	MessageBounce                 *Int       `xmlrpc:"message_bounce,omptempty"`
 	MessageChannelIds             *Relation  `xmlrpc:"message_channel_ids,omptempty"`
 	MessageFollowerIds            *Relation  `xmlrpc:"message_follower_ids,omptempty"`
+	MessageHasError               *Bool      `xmlrpc:"message_has_error,omptempty"`
+	MessageHasErrorCounter        *Int       `xmlrpc:"message_has_error_counter,omptempty"`
 	MessageIds                    *Relation  `xmlrpc:"message_ids,omptempty"`
 	MessageIsFollower             *Bool      `xmlrpc:"message_is_follower,omptempty"`
-	MessageLastPost               *Time      `xmlrpc:"message_last_post,omptempty"`
+	MessageMainAttachmentId       *Many2One  `xmlrpc:"message_main_attachment_id,omptempty"`
 	MessageNeedaction             *Bool      `xmlrpc:"message_needaction,omptempty"`
 	MessageNeedactionCounter      *Int       `xmlrpc:"message_needaction_counter,omptempty"`
 	MessagePartnerIds             *Relation  `xmlrpc:"message_partner_ids,omptempty"`
@@ -78,21 +102,28 @@ type ResPartner struct {
 	MessageUnreadCounter          *Int       `xmlrpc:"message_unread_counter,omptempty"`
 	Mobile                        *String    `xmlrpc:"mobile,omptempty"`
 	Name                          *String    `xmlrpc:"name,omptempty"`
+	OcnToken                      *String    `xmlrpc:"ocn_token,omptempty"`
+	OnlinePartnerBankAccount      *String    `xmlrpc:"online_partner_bank_account,omptempty"`
+	OnlinePartnerVendorName       *String    `xmlrpc:"online_partner_vendor_name,omptempty"`
 	OpportunityCount              *Int       `xmlrpc:"opportunity_count,omptempty"`
 	OpportunityIds                *Relation  `xmlrpc:"opportunity_ids,omptempty"`
-	OptOut                        *Bool      `xmlrpc:"opt_out,omptempty"`
 	ParentId                      *Many2One  `xmlrpc:"parent_id,omptempty"`
 	ParentName                    *String    `xmlrpc:"parent_name,omptempty"`
+	PartnerGid                    *Int       `xmlrpc:"partner_gid,omptempty"`
+	PartnerLedgerLabel            *String    `xmlrpc:"partner_ledger_label,omptempty"`
 	PartnerShare                  *Bool      `xmlrpc:"partner_share,omptempty"`
+	PaymentNextActionDate         *Time      `xmlrpc:"payment_next_action_date,omptempty"`
 	PaymentTokenCount             *Int       `xmlrpc:"payment_token_count,omptempty"`
 	PaymentTokenIds               *Relation  `xmlrpc:"payment_token_ids,omptempty"`
 	Phone                         *String    `xmlrpc:"phone,omptempty"`
+	PhoneCompany                  *String    `xmlrpc:"phone_company,omptempty"`
 	PickingWarn                   *Selection `xmlrpc:"picking_warn,omptempty"`
 	PickingWarnMsg                *String    `xmlrpc:"picking_warn_msg,omptempty"`
+	PlaneIds                      *Relation  `xmlrpc:"plane_ids,omptempty"`
+	PosOrderCount                 *Int       `xmlrpc:"pos_order_count,omptempty"`
 	PropertyAccountPayableId      *Many2One  `xmlrpc:"property_account_payable_id,omptempty"`
 	PropertyAccountPositionId     *Many2One  `xmlrpc:"property_account_position_id,omptempty"`
 	PropertyAccountReceivableId   *Many2One  `xmlrpc:"property_account_receivable_id,omptempty"`
-	PropertyAutosalesConfig       *Many2One  `xmlrpc:"property_autosales_config,omptempty"`
 	PropertyPaymentTermId         *Many2One  `xmlrpc:"property_payment_term_id,omptempty"`
 	PropertyProductPricelist      *Many2One  `xmlrpc:"property_product_pricelist,omptempty"`
 	PropertyPurchaseCurrencyId    *Many2One  `xmlrpc:"property_purchase_currency_id,omptempty"`
@@ -109,34 +140,55 @@ type ResPartner struct {
 	SaleWarn                      *Selection `xmlrpc:"sale_warn,omptempty"`
 	SaleWarnMsg                   *String    `xmlrpc:"sale_warn_msg,omptempty"`
 	Self                          *Many2One  `xmlrpc:"self,omptempty"`
+	SignatureCount                *Int       `xmlrpc:"signature_count,omptempty"`
 	SignupExpiration              *Time      `xmlrpc:"signup_expiration,omptempty"`
 	SignupToken                   *String    `xmlrpc:"signup_token,omptempty"`
 	SignupType                    *String    `xmlrpc:"signup_type,omptempty"`
 	SignupUrl                     *String    `xmlrpc:"signup_url,omptempty"`
 	SignupValid                   *Bool      `xmlrpc:"signup_valid,omptempty"`
-	Siret                         *String    `xmlrpc:"siret,omptempty"`
 	StateId                       *Many2One  `xmlrpc:"state_id,omptempty"`
 	Street                        *String    `xmlrpc:"street,omptempty"`
 	Street2                       *String    `xmlrpc:"street2,omptempty"`
+	SubscriptionCount             *Int       `xmlrpc:"subscription_count,omptempty"`
 	Supplier                      *Bool      `xmlrpc:"supplier,omptempty"`
 	SupplierInvoiceCount          *Int       `xmlrpc:"supplier_invoice_count,omptempty"`
+	SupplierPaymentModeId         *Many2One  `xmlrpc:"supplier_payment_mode_id,omptempty"`
 	TaskCount                     *Int       `xmlrpc:"task_count,omptempty"`
 	TaskIds                       *Relation  `xmlrpc:"task_ids,omptempty"`
 	TeamId                        *Many2One  `xmlrpc:"team_id,omptempty"`
 	Title                         *Many2One  `xmlrpc:"title,omptempty"`
+	TotalDue                      *Float     `xmlrpc:"total_due,omptempty"`
 	TotalInvoiced                 *Float     `xmlrpc:"total_invoiced,omptempty"`
+	TotalOverdue                  *Float     `xmlrpc:"total_overdue,omptempty"`
 	Trust                         *Selection `xmlrpc:"trust,omptempty"`
 	Type                          *Selection `xmlrpc:"type,omptempty"`
 	Tz                            *Selection `xmlrpc:"tz,omptempty"`
 	TzOffset                      *String    `xmlrpc:"tz_offset,omptempty"`
+	UnreconciledAmlIds            *Relation  `xmlrpc:"unreconciled_aml_ids,omptempty"`
+	UseParentAddress              *Bool      `xmlrpc:"use_parent_address,omptempty"`
 	UserId                        *Many2One  `xmlrpc:"user_id,omptempty"`
 	UserIds                       *Relation  `xmlrpc:"user_ids,omptempty"`
 	Vat                           *String    `xmlrpc:"vat,omptempty"`
 	Website                       *String    `xmlrpc:"website,omptempty"`
+	WebsiteDescription            *String    `xmlrpc:"website_description,omptempty"`
+	WebsiteId                     *Many2One  `xmlrpc:"website_id,omptempty"`
 	WebsiteMessageIds             *Relation  `xmlrpc:"website_message_ids,omptempty"`
+	WebsiteMetaDescription        *String    `xmlrpc:"website_meta_description,omptempty"`
+	WebsiteMetaKeywords           *String    `xmlrpc:"website_meta_keywords,omptempty"`
+	WebsiteMetaOgImg              *String    `xmlrpc:"website_meta_og_img,omptempty"`
+	WebsiteMetaTitle              *String    `xmlrpc:"website_meta_title,omptempty"`
+	WebsitePrivate                *Bool      `xmlrpc:"website_private,omptempty"`
+	WebsitePublished              *Bool      `xmlrpc:"website_published,omptempty"`
+	WebsiteShortDescription       *String    `xmlrpc:"website_short_description,omptempty"`
+	WebsiteUrl                    *String    `xmlrpc:"website_url,omptempty"`
 	WriteDate                     *Time      `xmlrpc:"write_date,omptempty"`
 	WriteUid                      *Many2One  `xmlrpc:"write_uid,omptempty"`
+	XFax                          *String    `xmlrpc:"x_fax,omptempty"`
+	XMfgtMemberNumber             *String    `xmlrpc:"x_mfgt_member_number,omptempty"`
+	XMfgtMemberSince              *Time      `xmlrpc:"x_mfgt_member_since,omptempty"`
+	XMfgtMemberUntil              *Time      `xmlrpc:"x_mfgt_member_until,omptempty"`
 	Zip                           *String    `xmlrpc:"zip,omptempty"`
+	ZipId                         *Many2One  `xmlrpc:"zip_id,omptempty"`
 }
 
 // ResPartners represents array of res.partner model.
