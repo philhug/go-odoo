@@ -43,7 +43,7 @@ func convertFromStaticToDynamicValue(staticValue interface{}) interface{} {
 	case *Selection:
 		v = sv.v
 	case *Time:
-		v = sv.v
+		v = sv.v.Format(time.DateOnly)
 	case *Float:
 		v = sv.v
 	case *Many2One:
